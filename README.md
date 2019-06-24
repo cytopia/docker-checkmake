@@ -59,8 +59,25 @@ where your Terraform module is located.
 
 ## Usage
 
+### Generic
 ```bash
+# Lint a single Makefile
 docker run --rm -v $(pwd):/data cytopia/checkmake Makefile
+
+# Lint all available Makefiles
+docker run --rm -v $(pwd):/data --entrypoint=find cytopia/checkmake . -name Makefile -exec checkmake {} \;
+```
+
+### Configuration
+
+If you want to change the behaviour of `checkmake`, you can add `checkmake.ini` to the root of your
+mount location and adjust the linter settings:
+```ini
+[maxbodylength]
+maxBodyLength = 10
+
+[minphony]
+disabled = true
 ```
 
 
