@@ -24,7 +24,6 @@
 > [pylint](https://github.com/cytopia/docker-pylint) **•**
 > [terraform-docs](https://github.com/cytopia/docker-terraform-docs) **•**
 > [terragrunt](https://github.com/cytopia/docker-terragrunt) **•**
-> [tflint](https://github.com/cytopia/docker-tflint) **•**
 > [yamllint](https://github.com/cytopia/docker-yamllint)
 
 
@@ -106,7 +105,6 @@ linter below for reproducible local or remote CI tests:
 | [pylint](https://github.com/cytopia/docker-pylint) | Python | Python source code, bug and quality checker |
 | [terraform-docs](https://github.com/cytopia/docker-terraform-docs) | Terraform | Terraform doc generator (TF 0.12 ready) |
 | [terragrunt](https://github.com/cytopia/docker-terragrunt) | Terraform | Terragrunt and Terraform |
-| [tflint](https://github.com/cytopia/docker-tflint) | Terraform | Best-practice Terraform linter |
 
 
 ### Makefiles
