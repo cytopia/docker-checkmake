@@ -24,7 +24,6 @@
 > [pylint](https://github.com/cytopia/docker-pylint) **•**
 > [terraform-docs](https://github.com/cytopia/docker-terraform-docs) **•**
 > [terragrunt](https://github.com/cytopia/docker-terragrunt) **•**
-> [tflint](https://github.com/cytopia/docker-tflint) **•**
 > [yamllint](https://github.com/cytopia/docker-yamllint)
 
 
@@ -59,8 +58,25 @@ where your Terraform module is located.
 
 ## Usage
 
+### Generic
 ```bash
+# Lint a single Makefile
 docker run --rm -v $(pwd):/data cytopia/checkmake Makefile
+
+# Lint all available Makefiles
+docker run --rm -v $(pwd):/data --entrypoint=find cytopia/checkmake . -name Makefile -exec checkmake {} \;
+```
+
+### Configuration
+
+If you want to change the behaviour of `checkmake`, you can add `checkmake.ini` to the root of your
+mount location and adjust the linter settings:
+```ini
+[maxbodylength]
+maxBodyLength = 10
+
+[minphony]
+disabled = true
 ```
 
 
@@ -89,7 +105,6 @@ linter below for reproducible local or remote CI tests:
 | [pylint](https://github.com/cytopia/docker-pylint) | Python | Python source code, bug and quality checker |
 | [terraform-docs](https://github.com/cytopia/docker-terraform-docs) | Terraform | Terraform doc generator (TF 0.12 ready) |
 | [terragrunt](https://github.com/cytopia/docker-terragrunt) | Terraform | Terragrunt and Terraform |
-| [tflint](https://github.com/cytopia/docker-tflint) | Terraform | Best-practice Terraform linter |
 
 
 ### Makefiles
