@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.com/cytopia/docker-checkmake.svg?branch=master)](https://travis-ci.com/cytopia/docker-checkmake)
 [![Tag](https://img.shields.io/github/tag/cytopia/docker-checkmake.svg)](https://github.com/cytopia/docker-checkmake/releases)
-[![](https://images.microbadger.com/badges/version/cytopia/checkmake:latest.svg)](https://microbadger.com/images/cytopia/checkmake:latest "checkmake")
-[![](https://images.microbadger.com/badges/image/cytopia/checkmake:latest.svg)](https://microbadger.com/images/cytopia/checkmake:latest "checkmake")
+[![](https://images.microbadger.com/badges/version/cytopia/checkmake:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/checkmake:latest "checkmake")
+[![](https://images.microbadger.com/badges/image/cytopia/checkmake:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/checkmake:latest "checkmake")
 [![](https://img.shields.io/badge/github-cytopia%2Fdocker--checkmake-red.svg)](https://github.com/cytopia/docker-checkmake "github.com/cytopia/docker-checkmake")
 [![License](https://img.shields.io/badge/license-MIT-%233DA639.svg)](https://opensource.org/licenses/MIT)
 
@@ -33,7 +33,7 @@
 
 View **[Dockerfile](https://github.com/cytopia/docker-checkmake/blob/master/Dockerfile)** on GitHub.
 
-[![Docker hub](http://dockeri.co/image/cytopia/checkmake)](https://hub.docker.com/r/cytopia/checkmake)
+[![Docker hub](http://dockeri.co/image/cytopia/checkmake?&kill_cache=1)](https://hub.docker.com/r/cytopia/checkmake)
 
 Tiny Alpine-based multistage-build dockerized version of [checkmake](https://github.com/mrtazz/checkmake)<sup>[1]</sup>,
 The image is built nightly against multiple stable versions and pushed to Dockerhub.
