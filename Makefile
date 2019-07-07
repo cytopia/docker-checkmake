@@ -2,7 +2,7 @@ ifneq (,)
 .error This Makefile requires GNU Make.
 endif
 
-.PHONY: build rebuild lint test _test_version tag pull login push enter
+.PHONY: build rebuild lint test _test-version tag pull login push enter
 
 CURRENT_DIR = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -26,9 +26,9 @@ lint:
 	@docker run --rm -v $(CURRENT_DIR):/data cytopia/file-lint file-utf8-bom --text --ignore '.git/,.github/,tests/' --path .
 
 test:
-	@$(MAKE) --no-print-directory _test_version
+	@$(MAKE) --no-print-directory _test-version
 
-_test_version:
+_test-version:
 	@echo "------------------------------------------------------------"
 	@echo "- Testing correct version"
 	@echo "------------------------------------------------------------"
