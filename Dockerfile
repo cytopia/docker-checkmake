@@ -1,7 +1,7 @@
 FROM golang:latest as builder
 
 # Install dependencies
-RUN set -x \
+RUN set -eux \
 	&& DEBIAN_FRONTEND=noninteractive apt-get update -qq \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --no-install-recommends --no-install-suggests \
 		git \
@@ -11,7 +11,7 @@ RUN set -x \
 
 # Get and build checkmake
 ARG VERSION
-RUN set -x \
+RUN set -eux \
 	&& export GOPATH=/go \
 	&& mkdir -p /go/src/github.com/mrtazz \
 	&& git clone https://github.com/mrtazz/checkmake /go/src/github.com/mrtazz/checkmake \
@@ -20,7 +20,9 @@ RUN set -x \
 		git checkout ${VERSION}; \
 	fi \
 	&& make \
-	&& chmod +x checkmake
+	&& chmod +x checkmake \
+	\
+	&& ./checkmake --version | grep -E '^checkmake [0-9]+'
 
 # Use a clean tiny image to store artifacts in
 FROM alpine:latest
