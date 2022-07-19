@@ -8,14 +8,16 @@ CURRENT_DIR = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 DIR = .
 FILE = Dockerfile
+BUILDER_NAME = cytopia
+BUILDER_EMAIL = cytopia@everythingcli.org
 IMAGE = cytopia/checkmake
 TAG = latest
 
 build:
-	docker build --build-arg VERSION=$(TAG) -t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
+	docker build --build-arg BUILDER_NAME=$(BUILDER_NAME) --build-arg BUILDER_EMAIL=$(BUILDER_EMAIL) --build-arg VERSION=$(TAG) -t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
 
 rebuild: pull
-	docker build --no-cache --build-arg VERSION=$(TAG) -t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
+	docker build --no-cache --build-arg BUILDER_NAME=$(BUILDER_NAME) --build-arg BUILDER_EMAIL=$(BUILDER_EMAIL) --build-arg VERSION=$(TAG) -t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
 
 lint:
 	@docker run --rm -v $(CURRENT_DIR):/data cytopia/file-lint file-cr --text --ignore '.git/,.github/,tests/' --path .

@@ -10,7 +10,7 @@ RUN set -eux \
 	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 # Get and build checkmake
-ARG VERSION
+ARG VERSION BUILDER_NAME BUILDER_EMAIL
 RUN set -eux \
 	&& export GOPATH=/go \
 	&& mkdir -p /go/src/github.com/mrtazz \
