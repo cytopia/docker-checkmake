@@ -60,7 +60,7 @@ The following Docker image tags are rolling releases and are built and updated e
 
 [![nightly](https://github.com/cytopia/docker-checkmake/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-checkmake/actions?query=workflow%3Anightly)
 
-| Docker Tag           | Git Ref   | checkmak     | Available Architectures                      |
+| Docker Tag           | Git Ref   | checkmake    | Available Architectures                      |
 |----------------------|-----------|--------------|----------------------------------------------|
 | `latest`             | master    | latest       | `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6`, `ppc64le`, `s390x` |
 
@@ -106,7 +106,8 @@ maxBodyLength = 10
 disabled = true
 ```
 
-## Related [#awesome-ci](https://github.com/topics/awesome-ci) projects
+
+## :arrows_counterclockwise: Related [#awesome-ci](https://github.com/topics/awesome-ci) projects
 
 ### Docker images
 
